@@ -8,7 +8,6 @@ export default function Main() {
 
   let trueCount = 1;
   while (trueCount <= 3) {
-    // eslint-disable-next-line no-inner-declarations
     function gcd(a, b) {
       if (b === 0) {
         return a;
