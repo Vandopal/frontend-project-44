@@ -35,6 +35,7 @@ export default function Main() {
     console.log(`Question: ${mamba1}`);
     const name = readlineSync.question('Your answer: ');
 
+    // eslint-disable-next-line no-inner-declarations
     function fire(n) {
       if (n === 'yes') { return true; } return false;
     }
@@ -44,6 +45,7 @@ export default function Main() {
     if (biglogic !== 'Correct!') { trueCount = 0; }
 
     console.log(biglogic);
+    // eslint-disable-next-line no-plusplus
     trueCount++;
   }
   console.log(`Congratulations, ${timmy}!`);
