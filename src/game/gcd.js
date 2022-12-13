@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 
-export default function Main() {
+// eslint-disable-next-line consistent-return
+function smurf() {
   console.log('Welcome to the Brain Games!');
   const timmy = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${timmy}!`);
@@ -8,30 +9,35 @@ export default function Main() {
 
   let trueCount = 1;
   while (trueCount <= 3) {
-    function gcd(a, b) {
+    // eslint-disable-next-line no-inner-declarations
+    function exampleGCD(a, b) {
       if (b === 0) {
         return a;
       }
-      return gcd(b, a % b);
+      return exampleGCD(b, a % b);
     }
 
-    let result;
+    let logic;
 
-    const low = 0;
-    const high = 100;
-    const mamba1 = `${Math.floor(Math.random() * (high - low) + low)}`;
-    const mamba2 = `${Math.floor(Math.random() * (high - low) + low)}`;
+    const min = 0;
+    const max = 100;
+
+    const mamba1 = `${Math.floor(Math.random() * (max - min) + min)}`;
+    const mamba2 = `${Math.floor(Math.random() * (max - min) + min)}`;
 
     console.log(`Question: ${mamba1} ${mamba2}`);
 
-    const name = readlineSync.question('Your answer: ');
+    const userAnsw = readlineSync.question('Your answer: ');
 
-    if (name === `${gcd(mamba1, mamba2)}`) { result = 'Correct!'; } else if (name !== `${gcd(mamba1, mamba2)}`) { return console.log(`'${name}' is wrong answer ;(. Correct answer was '${gcd(mamba1, mamba2)}'.\nLet's try again, ${timmy}!`); }
+    if (userAnsw === `${exampleGCD(mamba1, mamba2)}`) { logic = 'Correct!'; } else if (userAnsw !== `${exampleGCD(mamba1, mamba2)}`) {
+      console.log(`'${userAnsw}' is wrong answer ;(. Correct answer was '${exampleGCD(mamba1, mamba2)}'.`);
+      return console.log(`Let's try again, ${timmy}`);
+    }
 
-    if (result !== 'Correct!') { trueCount = 0; }
-
-    console.log(result);
+    if (logic !== 'Correct!') { trueCount = 0; }
+    console.log(logic);
     trueCount += 1;
   }
   console.log(`Congratulations, ${timmy}!`);
 }
+smurf();
