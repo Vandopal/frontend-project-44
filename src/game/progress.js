@@ -2,7 +2,6 @@ import readlineSync from 'readline-sync';
 
 const getRandomNumber = (min, max = 100) => Math.floor(min + Math.random() * (max + 1 - min));
 
-
 const description = 'What number is missing in the progression?';
 
 const retry = 3;
