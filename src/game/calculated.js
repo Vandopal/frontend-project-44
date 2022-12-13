@@ -18,6 +18,7 @@ export default function Main() {
     const mamba2 = `${Math.floor(Math.random() * (high - low) + low)}`;
 
     const calc = ['+', '-', '*'];
+    // eslint-disable-next-line max-len, no-inner-declarations, no-shadow
     function random(calc) { const radious = Math.floor(Math.random() * calc.length); return calc[radious]; }
 
     const sign = random(calc);
@@ -33,6 +34,7 @@ export default function Main() {
     if (bigDeal !== 'Correct!') { trueCount = 0; }
 
     console.log(bigDeal);
+    // eslint-disable-next-line no-plusplus
     trueCount++;
   }
   console.log(`Congratulations, ${timmy}!`);

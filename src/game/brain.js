@@ -25,7 +25,8 @@ export default function brain() {
     const name = readlineSync.question('Your answer: ');
     if (Eyes(mamba) === true && name === 'yes') { king = pog; } else if (Eyes(mamba) === false && name === 'no') { king = pog; } else { king = 'Zolotie Kupola'; }
 
-    function miss(answer) {
+    // eslint-disable-next-line no-inner-declarations, no-unused-vars
+    function miss(_answer) {
       let mister;
       if (Eyes(mamba) === true && name === 'yes') { mister = 'yes'; } else if (Eyes(mamba) === false && name === 'no') { mister = 'yes'; } else { mister = 'no'; }
       return mister;

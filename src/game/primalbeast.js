@@ -13,6 +13,7 @@ function yes(ans) {
 }
 
 const Prime = (num) => {
+  // eslint-disable-next-line no-plusplus
   for (let i = 2, s = Math.sqrt(num); i <= s; i++) if (num % i === 0) return false;
   return num > 1;
 };
@@ -25,7 +26,6 @@ export default function Main() {
   let trueCount = 1;
   while (trueCount <= 3) {
     let biglogic;
-    let bigDeal;
 
     const low = 0;
     const high = 15;

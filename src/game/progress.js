@@ -6,6 +6,7 @@ const description = 'What number is missing in the progression?';
 
 const retry = 3;
 
+// eslint-disable-next-line no-shadow
 const runGame = (description, generateRound) => {
   console.log('Welcome to the Brain Games!');
   const timmy = readlineSync.question('May I have your name? ');
