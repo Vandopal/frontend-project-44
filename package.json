@@ -8,5 +8,13 @@
         "eslint": "^8.29.0",
         "eslint-config-airbnb-base": "^15.0.0",
         "eslint-plugin-import": "^2.26.0"
-    }
+    },
+    "bin": {
+        "brain-games": "bin/brain-games.js",
+        "brain-even": "bin/brain-even.js",
+        "brain-calc": "bin/brain-calc.js",
+        "brain-gcd.js": "bin/brain-gcd.js",
+        "brain-progression.js": "bin/brain-progression.js",
+        "brain-prime": "bin/brain-prime"
+      }
 }
