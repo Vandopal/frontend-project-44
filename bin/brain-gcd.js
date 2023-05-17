@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
+// eslint-disable-next-line consistent-return
 export default function gcd() {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');

@@ -8,6 +8,7 @@ function primeCalculator(num) {
   return num > 1;
 }
 
+// eslint-disable-next-line consistent-return
 export default function prime() {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?: ');
