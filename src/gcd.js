@@ -1,6 +1,13 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
+function exampleGCD(a, b) {
+  if (b === 0) {
+    return a;
+  }
+  return exampleGCD(b, a % b);
+}
+
 // eslint-disable-next-line consistent-return
 export default function gcd() {
   console.log('Welcome to the Brain Games!');
@@ -10,14 +17,6 @@ export default function gcd() {
 
   let rounds = 1;
   while (rounds <= 3) {
-    // eslint-disable-next-line no-inner-declarations
-    function exampleGCD(a, b) {
-      if (b === 0) {
-        return a;
-      }
-      return exampleGCD(b, a % b);
-    }
-
     let roundAnswer;
 
     const min = 0;
