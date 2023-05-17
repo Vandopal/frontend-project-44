@@ -11,39 +11,39 @@ function evenOrNot(numb) {
   return false;
 }
 
-export default function Main() {
+export default function Even() {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${name}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const min = 0;
-  const max = 100;
+  const minNum = 0;
+  const maxNum = 100;
 
-  let trueAnswers = 0;
-  while (trueAnswers <= 2) {
-    let anss;
+  let rounds = 0;
+  while (rounds <= 2) {
+    let roundAnswer;
 
-    const randomCount = `${Math.floor(Math.random() * (max - min)) + min}`;
+    const randomNumbers = `${Math.floor(Math.random() * (maxNum - minNum)) + minNum}`;
 
-    console.log(`Question: ${randomCount}`);
-    const userAnsw = readlineSync.question('Your answer:  ');
+    console.log(`Question: ${randomNumbers}`);
+    const userAnswer = readlineSync.question('Your answer:  ');
 
-    if (evenOrNot(randomCount) === true && userAnsw === 'yes') {
-      anss = ('Correct!');
-    } else if (evenOrNot(randomCount) === false && userAnsw === 'no') {
-      anss = ('Correct!');
+    if (evenOrNot(randomNumbers) === true && userAnswer === 'yes') {
+      roundAnswer = ('Correct!');
+    } else if (evenOrNot(randomNumbers) === false && userAnswer === 'no') {
+      roundAnswer = ('Correct!');
     } else {
-      console.log(`'${userAnsw}' is wrong answer ;(. Correct answer was '${Number(randomCount) % 2 === 0 ? 'yes' : 'no'}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${Number(randomNumbers) % 2 === 0 ? 'yes' : 'no'}'.`);
       return console.log(`Let's try again, ${name}!`);
     }
 
-    if (anss !== 'Correct!') { trueAnswers = 0; }
+    if (roundAnswer !== 'Correct!') { rounds = 0; }
 
-    console.log(anss);
-    trueAnswers += 1;
+    console.log(roundAnswer);
+    rounds += 1;
   }
 
   console.log(`Congratulations, ${name}!`);
 }
 
-Main();
+Even();

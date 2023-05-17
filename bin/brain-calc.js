@@ -1,24 +1,21 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-// eslint-disable-next-line no-use-before-define
-Main();
-
-export default function Main() {
+export default function calculator() {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${name}!`);
   console.log('What is the result of the expression?');
 
-  let emptyAnsw = 1;
-  while (emptyAnsw <= 3) {
-    let answ;
-    let logic;
+  let rounds = 1;
+  while (rounds <= 3) {
+    let roundAnswer;
+    let calculatorSign;
 
-    const min = 0;
-    const max = 50;
-    const randomNumbers1 = `${Math.floor(Math.random() * (max - min) + min)}`;
-    const randomNumbers2 = `${Math.floor(Math.random() * (max - min) + min)}`;
+    const minNum = 0;
+    const maxNum = 50;
+    const randomNumbers1 = `${Math.floor(Math.random() * (maxNum - minNum) + minNum)}`;
+    const randomNumbers2 = `${Math.floor(Math.random() * (maxNum - minNum) + minNum)}`;
 
     const values = ['+', '-', '*'];
 
@@ -30,23 +27,26 @@ export default function Main() {
     console.log(`Question: ${example}`);
 
     if (randomExample === '+') {
-      logic = `${(randomNumbers1 * 1) + (randomNumbers2 * 1)}`;
+      calculatorSign = `${(randomNumbers1 * 1) + (randomNumbers2 * 1)}`;
     } else if (randomExample === '*') {
-      logic = `${randomNumbers1 * randomNumbers2}`;
-    } else { logic = `${randomNumbers1 - randomNumbers2}`; }
+      calculatorSign = `${randomNumbers1 * randomNumbers2}`;
+    } else { calculatorSign = `${randomNumbers1 - randomNumbers2}`; }
 
-    const answer = readlineSync.question('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (answer === logic) {
-      answ = 'Correct!';
+    if (userAnswer === calculatorSign) {
+      roundAnswer = 'Correct!';
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${logic}'."`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calculatorSign}'."`);
       return console.log(`Let's try again, ${name}!`);
     }
 
-    if (answ !== 'Correct!') { emptyAnsw = 0; }
-    console.log(answ);
-    emptyAnsw += 1;
+    if (roundAnswer !== 'Correct!') { rounds = 0; }
+    console.log(roundAnswer);
+    rounds += 1;
   }
   console.log(`Congratulations, ${name}!`);
 }
+
+// eslint-disable-next-line no-use-before-define
+calculator();

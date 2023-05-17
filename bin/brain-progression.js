@@ -9,19 +9,19 @@ export default function Main() {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log('What number is missing in the progression?');
-  let emptyAnsw = 1;
-  while (emptyAnsw <= 3) {
+  let rounds = 1;
+  while (rounds <= 3) {
     // eslint-disable-next-line max-len
-    const randonCount = arithmeticProgression(Math.floor(Math.random() * (20 - 10)) + 2, Math.floor(Math.random() * (200 - 50)) + 50);
-    const trueLet = randonCount[3];
-    randonCount[3] = '..';
-    console.log(`Question: ${randonCount.join(' ')}`);
-    const userAnsw = readlineSync.question('You answer: ');
-    if (Number(userAnsw) !== Number(trueLet)) {
-      console.log(`'${userAnsw}' is wrong answer ;(. Correct answer was '${trueLet}'.`);
+    const progression = arithmeticProgression(Math.floor(Math.random() * (20 - 10)) + 2, Math.floor(Math.random() * (200 - 50)) + 50);
+    const trueNumber = progression[3];
+    progression[3] = '..';
+    console.log(`Question: ${progression.join(' ')}`);
+    const userAnswer = readlineSync.question('You answer: ');
+    if (Number(userAnswer) !== Number(trueNumber)) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${trueNumber}'.`);
       return console.log(`Let's try again, ${name}!`);
     }
-    emptyAnsw += 1;
+    rounds += 1;
     console.log('Correct!');
   }
 
