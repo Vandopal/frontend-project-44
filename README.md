@@ -3,6 +3,7 @@
 ### Вариант запуска:
 #### make brain-games, (с установкой make)
 #### node bin/brain-games.js
+#### node brain-games.js, (при нахождении в директории bin)
 ---
 #### Основыне функции, а также пример работы:
 #### brain-games - Приветствие
